@@ -37,6 +37,10 @@ public class UIGestionUDirector extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenuBuscarUsuarioDir = new javax.swing.JMenuItem();
         jMenuBuscarUsuarioAdtvo = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,6 +90,19 @@ public class UIGestionUDirector extends javax.swing.JFrame {
         jMenuBuscar.add(jMenu3);
 
         jMenuBar1.add(jMenuBuscar);
+
+        jMenu2.setText("Gestion Profesores");
+
+        jMenuItem1.setText("Nuevo Ingreso");
+        jMenu2.add(jMenuItem1);
+
+        jMenuItem2.setText("Modificar");
+        jMenu2.add(jMenuItem2);
+
+        jMenuItem3.setText("Informes");
+        jMenu2.add(jMenuItem3);
+
+        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
@@ -141,11 +158,15 @@ public class UIGestionUDirector extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     public javax.swing.JMenu jMenuBuscar;
     public javax.swing.JMenuItem jMenuBuscarUsuarioAdtvo;
     public javax.swing.JMenuItem jMenuBuscarUsuarioDir;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     public javax.swing.JMenuItem jMenuModificaUsuarioDir;
     public javax.swing.JMenuItem jMenuNuevoUsuarioDir;
     // End of variables declaration//GEN-END:variables

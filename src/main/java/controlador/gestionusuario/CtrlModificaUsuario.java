@@ -216,16 +216,16 @@ public class CtrlModificaUsuario implements ActionListener, KeyListener {
                 break;
             case 3:
                 registros = crudGUU.buscarUsuario(String.valueOf(dato));
-                System.out.println("controladoSystemr.gestionusuario.CtrlModificaUsuario.cargarRegistrosTabla() CASO 3" + registros);
+//                System.out.println("controladoSystemr.gestionusuario.CtrlModificaUsuario.cargarRegistrosTabla() CASO 3" + registros);
                 break;
             case 4:
 //                System.out.println("controladoSystemr.gestionusuario.CtrlModificaUsuario.cargarRegistrosTabla() CASO 4" + crudGUU);
 //                  System.out.println("controladoSystemr.gestionusuario.CtrlModificaUsuario.cargarRegistrosTabla() CASO 4" + registros);
-                registros = crudGUU.buscarDNI(Integer.valueOf(tipoBusqueda));
-                System.out.println("controladoSystemr.gestionusuario.CtrlModificaUsuario.cargarRegistrosTabla() CASO 4" + registros);
+                registros = crudGUU.buscarDNI(Integer.valueOf(String.valueOf(dato)));
+//                System.out.println("controladoSystemr.gestionusuario.CtrlModificaUsuario.cargarRegistrosTabla() CASO 4" + registros);
                 break;
             default:
-                System.err.println("Cargar registro tabla opcion busqueda invalida");
+//                System.err.println("Cargar registro tabla opcion busqueda invalida");
                 registros = crudGUU.extraerTodos();
         }
         
