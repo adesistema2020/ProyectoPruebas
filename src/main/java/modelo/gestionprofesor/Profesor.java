@@ -6,38 +6,28 @@ import java.sql.Date;
 /**
  * @author AdeS
  */
-public class Profesor {
-    private int id_profesor;
-    private String apellido;
-    private String nombre;
-    private int num_documento;
-    private String tipo_documento;
-    private Date fecha_nacimineto;
-    private String email;
-    private int num_tel;
-    private String titulo;
-    private String especialidad;
-    private Date fecha_ingreso;
-    private int legajo;
-    private int id_domicilio;
 
+public class Profesor{
+private int id_profesor;
+private String nombreProf;
+private String apellido;
+private String direccion;
+private int dni;
+private int id_actiAcademica;
+private int id_carrera;
+private int id_materia;
     
-    public Profesor() {}
-    
-    public Profesor(int id_profesor, String apellido, String nombre, int num_documento, String tipo_documento, Date fecha_nacimineto, String email, int num_tel, String titulo, String especialidad, Date fecha_ingreso, int legajo, int id_domicilio) {
+public Profesor(){}
+
+    public Profesor(int id_profesor, String nombreProf, String apellido, String direccion, int dni, int id_actiAcademica, int id_carrera, int id_materia) {
         this.id_profesor = id_profesor;
+        this.nombreProf = nombreProf;
         this.apellido = apellido;
-        this.nombre = nombre;
-        this.num_documento = num_documento;
-        this.tipo_documento = tipo_documento;
-        this.fecha_nacimineto = fecha_nacimineto;
-        this.email = email;
-        this.num_tel = num_tel;
-        this.titulo = titulo;
-        this.especialidad = especialidad;
-        this.fecha_ingreso = fecha_ingreso;
-        this.legajo = legajo;
-        this.id_domicilio = id_domicilio;
+        this.direccion = direccion;
+        this.dni = dni;
+        this.id_actiAcademica = id_actiAcademica;
+        this.id_carrera = id_carrera;
+        this.id_materia = id_materia;
     }
 
     public int getId_profesor() {
@@ -48,6 +38,14 @@ public class Profesor {
         this.id_profesor = id_profesor;
     }
 
+    public String getNombreProf() {
+        return nombreProf;
+    }
+
+    public void setNombreProf(String nombreProf) {
+        this.nombreProf = nombreProf;
+    }
+
     public String getApellido() {
         return apellido;
     }
@@ -56,99 +54,48 @@ public class Profesor {
         this.apellido = apellido;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public int getNum_documento() {
-        return num_documento;
+    public int getDni() {
+        return dni;
     }
 
-    public void setNum_documento(int num_documento) {
-        this.num_documento = num_documento;
+    public void setDni(int dni) {
+        this.dni = dni;
     }
 
-    public String getTipo_documento() {
-        return tipo_documento;
+    public int getId_actiAcademica() {
+        return id_actiAcademica;
     }
 
-    public void setTipo_documento(String tipo_documento) {
-        this.tipo_documento = tipo_documento;
+    public void setId_actiAcademica(int id_actiAcademica) {
+        this.id_actiAcademica = id_actiAcademica;
     }
 
-    public Date getFecha_nacimineto() {
-        return fecha_nacimineto;
+    public int getId_carrera() {
+        return id_carrera;
     }
 
-    public void setFecha_nacimineto(Date fecha_nacimineto) {
-        this.fecha_nacimineto = fecha_nacimineto;
+    public void setId_carrera(int id_carrera) {
+        this.id_carrera = id_carrera;
     }
 
-    public String getEmail() {
-        return email;
+    public int getId_materia() {
+        return id_materia;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getNum_tel() {
-        return num_tel;
-    }
-
-    public void setNum_tel(int num_tel) {
-        this.num_tel = num_tel;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getEspecialidad() {
-        return especialidad;
-    }
-
-    public void setEspecialidad(String especialidad) {
-        this.especialidad = especialidad;
-    }
-
-    public Date getFecha_ingreso() {
-        return fecha_ingreso;
-    }
-
-    public void setFecha_ingreso(Date fecha_ingreso) {
-        this.fecha_ingreso = fecha_ingreso;
-    }
-
-    public int getLegajo() {
-        return legajo;
-    }
-
-    public void setLegajo(int legajo) {
-        this.legajo = legajo;
-    }
-
-    public int getId_domicilio() {
-        return id_domicilio;
-    }
-
-    public void setId_domicilio(int id_domicilio) {
-        this.id_domicilio = id_domicilio;
+    public void setId_materia(int id_materia) {
+        this.id_materia = id_materia;
     }
 
     @Override
     public String toString() {
-        return "Profesor{" + "id_profesor=" + id_profesor + ", apellido=" + apellido + ", nombre=" + nombre + ", num_documento=" + num_documento + ", tipo_documento=" + tipo_documento + ", fecha_nacimineto=" + fecha_nacimineto + ", email=" + email + ", num_tel=" + num_tel + ", titulo=" + titulo + ", especialidad=" + especialidad + ", fecha_ingreso=" + fecha_ingreso + ", legajo=" + legajo + ", id_domicilio=" + id_domicilio + '}';
+        return "Profesor{" + "id_profesor=" + id_profesor + ", nombreProf=" + nombreProf + ", apellido=" + apellido + ", direccion=" + direccion + ", dni=" + dni + ", id_actiAcademica=" + id_actiAcademica + ", id_carrera=" + id_carrera + ", id_materia=" + id_materia + '}';
     }
-    
-    
-    
 }

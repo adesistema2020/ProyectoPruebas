@@ -62,9 +62,6 @@ public class CtrlModificaUsuario implements ActionListener, KeyListener {
         this.crudGUU = crudGUU;
         this.crudGNU = new GestionNivelUser();
         this.frmModifica = frmModifica;
-//        this.frmModifica.jBtnBuscarDNI.addActionListener(this);
-//        this.frmModifica.jBtnBuscarApellido.addActionListener(this);
-//        this.frmModifica.jBtnBuscarUsuario.addActionListener(this);
         this.frmModifica.jBtnModifica.addActionListener(this);
         this.frmModifica.jBtnGuardaCambios.addActionListener(this);
     }
@@ -79,19 +76,7 @@ public class CtrlModificaUsuario implements ActionListener, KeyListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-//        if (e.getSource() == frmModifica.jBtnBuscarDNI) {
-//            cargaTabla(frmModifica.jTableListadoUsuario);
-//            String buscar = frmModifica.jBtnBuscarDNI.getText();
-//            String where = "";
-//
-//            if (!"".equals(buscar)) {
-////            where = "SELECT * FROM t_registro WHERE dni = '" + buscar + "'";
-////            where = "SELECT crudGUU.buscarDNI(modU) WHERE dni = '" + buscar + "'";
-//                where = crudGUU.buscarDNI(modU) + buscar + "'";
-//
-//                DefaultTableModel modelo = new DefaultTableModel();
-//            }
-//        }
+
         if (e.getSource() == frmModifica.jBtnModifica) {
             int fila = frmModifica.jTableListadoUsuario.getSelectedRow();
             if (fila == -1) {
@@ -106,9 +91,9 @@ public class CtrlModificaUsuario implements ActionListener, KeyListener {
                     frmModifica.jTxtDNI.setText(String.valueOf(frmModifica.jTableListadoUsuario.getValueAt(fila, 5)));
                     frmModifica.jTxtMail.setText(String.valueOf(frmModifica.jTableListadoUsuario.getValueAt(fila, 6)));
                     frmModifica.jTxtLegajo.setText(String.valueOf(frmModifica.jTableListadoUsuario.getValueAt(fila, 7)));
-                    
-                          System.out.println("NivelUsuario!!!!!"+((frmModifica.jTableListadoUsuario.getValueAt(fila, 8))));
-           frmModifica.jTxtId_t_nivel.setText(String.valueOf(frmModifica.jTableListadoUsuario.getValueAt(fila, 8)));
+
+                    System.out.println("NivelUsuario!!!!!" + ((frmModifica.jTableListadoUsuario.getValueAt(fila, 8))));
+                    frmModifica.jTxtId_t_nivel.setText(String.valueOf(frmModifica.jTableListadoUsuario.getValueAt(fila, 8)));
 //////         modU.setId_t_nivel(crudGNU.obtenerIdNivel(frm.jcbxNivelUsuario.getItemAt(frm.jcbxNivelUsuario.getSelectedIndex())));
 //                    frmModifica.jcbxNivelUsuario.getItemAt(modNU.setId_nivel(crudGNU.obtenerLisCaracter(frmModifica.jTxtId_t_nivel.getIt))));
 //// buscar caracter de id_ nivel y seleccionar en el combo
@@ -125,71 +110,7 @@ public class CtrlModificaUsuario implements ActionListener, KeyListener {
         }
     }
 
-//    public void KeyTyped(KeyEvent e) {
-//        filtrarTabla();
-//        }
-//    
-//    public void filtrarTabla(){
-//        try {
-//           trs.setRowFilter(RowFilter.regexFilter(frmModifica.jTxtBuscarApellido.getText(), 3));
-//        } catch (Exception e) {
-//        }
-//    }
-////////    Retomar busqued de elemento
-//public void filtrarTabla (String query){
-//TableRowSorter<DefaultTableModel>filtrar = new TableRowSorter<DefaultTableModel>(modelo);
-//frmModifica.jTableListadoUsuario.setRowSorter(filtrar);
-//
-//filtrar.setRowFilter(RowFilter.regexFilter(query));
-//}
-//    public void KeyTyped(KeyEvent e) {
-//        
-//        }
-////        String[] titulos = {"id", "usuario", "apellido", "nombre", "dni", "mail", "legajo", "Id_t_nivel"};
-////        DefaultTableModel modelo = new DefaultTableModel(null, titulos);
-//        frmModifica.jTxtBuscarApellido.addKeyListener(new KeyAdapter() {
-//            public void KeyReleased(KeyEvent ke) {
-//
-//                trs.setRowFilter(RowFilter.regexFilter("(?i)"+frmModifica.jTxtBuscarApellido.getText(), 3));
-//            }
-//        });
-//        trs = new TableRowSorter(modelo);
-//        System.out.println("controlador.gestionusuario.CtrlModificaUsuario.KeyTyped()" + trs);
-//        frmModifica.jTableListadoUsuario.setRowSorter(trs);
-//    }
-////////////// Sellecciona fila de tabla y las muestras en caja de texto   
-//    public void mouseClicked(MouseEvent e) {
-//        if (frmModifica.jTableListadoUsuario.getSelectedRow() >= 0) {
-//            try {
-////                DefaultTableModel tm = (DefaultTableModel) frmModifica.jTableListadoUsuario.getModel();
-//                int fila = frmModifica.jTableListadoUsuario.getSelectedRow();
-//                frmModifica.jTxtId.setText(String.valueOf(frmModifica.jTableListadoUsuario.getValueAt(fila, 0)));
-//                frmModifica.jTxtNombreUsuario.setText(String.valueOf(frmModifica.jTableListadoUsuario.getValueAt(fila, 1)));
-//                frmModifica.jTxtContrasenia.setText(String.valueOf(frmModifica.jTableListadoUsuario.getValueAt(fila, 2)));
-//                frmModifica.jTxtApellido.setText(String.valueOf(frmModifica.jTableListadoUsuario.getValueAt(fila, 3)));
-//                frmModifica.jTxtNombre.setText(String.valueOf(frmModifica.jTableListadoUsuario.getValueAt(fila, 4)));
-//                frmModifica.jTxtDNI.setText(String.valueOf(frmModifica.jTableListadoUsuario.getValueAt(fila, 5)));
-//                frmModifica.jTxtMail.setText(String.valueOf(frmModifica.jTableListadoUsuario.getValueAt(fila, 6)));
-//                frmModifica.jTxtLegajo.setText(String.valueOf(frmModifica.jTableListadoUsuario.getValueAt(fila, 7)));
-//                frmModifica.jTxtId_t_nivel.setText(String.valueOf(frmModifica.jTableListadoUsuario.getValueAt(fila, 8)));
-////                String selecciona = frmModifica.jTableListadoUsuario.getValueAt(fila, 0).toString();
-////String id = String.valueOf(tm.getValueAt(frmModifica.jTableListadoUsuario.getSelectedRow(), 0));
-////String usuario = String.valueOf(tm.getValueAt(frmModifica.jTableListadoUsuario.getSelectedRow(), 1));
-////String password = String.valueOf(tm.getValueAt(frmModifica.jTableListadoUsuario.getSelectedRow(), 2));
-////String apellido = String.valueOf(tm.getValueAt(frmModifica.jTableListadoUsuario.getSelectedRow(), 3));
-////String nombre = String.valueOf(tm.getValueAt(frmModifica.jTableListadoUsuario.getSelectedRow(), 4));
-////String dni = String.valueOf(tm.getValueAt(frmModifica.jTableListadoUsuario.getSelectedRow(), 5));
-////String mail = String.valueOf(tm.getValueAt(frmModifica.jTableListadoUsuario.getSelectedRow(), 6));
-////String legajo = String.valueOf(tm.getValueAt(frmModifica.jTableListadoUsuario.getSelectedRow(), 7));
-////String Id_t_nivel = String.valueOf(tm.getValueAt(frmModifica.jTableListadoUsuario.getSelectedRow(), 8));
-//
-//            } catch (Exception ex) {
-//                System.out.print(ex.toString());
-//            }
-//        }
-//    }
     public void cargaTabla(JTable tabla) {
-//        DefaultTableModel modelo = new DefaultTableModel();
         tabla.setModel(modelo);
         modelo.addColumn("id");
         modelo.addColumn("usuario");
@@ -200,7 +121,6 @@ public class CtrlModificaUsuario implements ActionListener, KeyListener {
         modelo.addColumn("mail");
         modelo.addColumn("legajo");
         modelo.addColumn("Id_t_nivel");
-
     }
 
     public void cargarRegistrosTabla(JTable tabla, int tipoBusqueda, Object dato) {
@@ -216,19 +136,14 @@ public class CtrlModificaUsuario implements ActionListener, KeyListener {
                 break;
             case 3:
                 registros = crudGUU.buscarUsuario(String.valueOf(dato));
-//                System.out.println("controladoSystemr.gestionusuario.CtrlModificaUsuario.cargarRegistrosTabla() CASO 3" + registros);
                 break;
             case 4:
-//                System.out.println("controladoSystemr.gestionusuario.CtrlModificaUsuario.cargarRegistrosTabla() CASO 4" + crudGUU);
-//                  System.out.println("controladoSystemr.gestionusuario.CtrlModificaUsuario.cargarRegistrosTabla() CASO 4" + registros);
                 registros = crudGUU.buscarDNI(Integer.valueOf(String.valueOf(dato)));
-//                System.out.println("controladoSystemr.gestionusuario.CtrlModificaUsuario.cargarRegistrosTabla() CASO 4" + registros);
                 break;
             default:
-//                System.err.println("Cargar registro tabla opcion busqueda invalida");
                 registros = crudGUU.extraerTodos();
         }
-        
+
         int usuariosGuardados = registros.size();
 
         for (int i = 0; i < usuariosGuardados; i++) {
@@ -282,6 +197,7 @@ public class CtrlModificaUsuario implements ActionListener, KeyListener {
         } catch (Exception e) {
             System.out.println("Se produjo un error de carga!!");
         }
+         
     }
 
     public void limpiarTabla() {
@@ -326,14 +242,14 @@ public class CtrlModificaUsuario implements ActionListener, KeyListener {
     public void keyReleased(KeyEvent e) {
 
         if (e.getSource() == frmModifica.jTxtBuscarApellido) {
-//             System.out.println(" Se Leyo el valor de JtxtBuscarApellido!!!!!"+frmModifica.jTxtBuscarApellido);
+
             String apellido = frmModifica.jTxtBuscarApellido.getText();
             limpiarTabla();
             cargarRegistrosTabla(frmModifica.jTableListadoUsuario, 2, apellido);
 
         }
         if (e.getSource() == frmModifica.jTxtBuscarUsuario) {
-//             System.out.println(" Se Leyo el valor de JtxtBuscarUsuario!!!!!"+frmModifica.jTxtBuscarUsuario);
+
             String usuario = frmModifica.jTxtBuscarUsuario.getText();
             limpiarTabla();
             cargarRegistrosTabla(frmModifica.jTableListadoUsuario, 3, usuario);
@@ -343,17 +259,12 @@ public class CtrlModificaUsuario implements ActionListener, KeyListener {
         if (e.getSource() == frmModifica.jTxtBuscarDNI) {
             try {
                 int dni = Integer.valueOf(frmModifica.jTxtBuscarDNI.getText());
-//                String dni = (frmModifica.jTxtBuscarDNI.getText());
                 limpiarTabla();
-
-//                System.out.println(" Se Leyo el valor de JtxtBuscarDni caso 4 KeyRelease!!!!!" + frmModifica.jTableListadoUsuario);
                 cargarRegistrosTabla(frmModifica.jTableListadoUsuario, 4, dni);
-                
+
             } catch (Exception ex) {
                 System.err.println("aquiiiii falla caso 4 KeyRelease!!!!" + ex);
             }
-
-////            Idemn al primer if
         }
 
     }

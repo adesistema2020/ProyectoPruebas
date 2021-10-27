@@ -6,17 +6,15 @@ package modelo.gestionprofesor;
  */
 public class Carrera {
     private int id_carrera;
-    private int id_profesor;
-    private int cod_carrera;
-    private String nom_carrera;
+    private int codCarrera;
+    private String nomCarrera;
     
 public Carrera(){}
 
-    public Carrera(int id_carrera, int id_profesor, int cod_carrera, String nom_carrera) {
+    public Carrera(int id_carrera, int codCarrera, String nomCarrera) {
         this.id_carrera = id_carrera;
-        this.id_profesor = id_profesor;
-        this.cod_carrera = cod_carrera;
-        this.nom_carrera = nom_carrera;
+        this.codCarrera = codCarrera;
+        this.nomCarrera = nomCarrera;
     }
 
     public int getId_carrera() {
@@ -27,34 +25,27 @@ public Carrera(){}
         this.id_carrera = id_carrera;
     }
 
-    public int getId_profesor() {
-        return id_profesor;
+    public int getCodCarrera() {
+        return codCarrera;
     }
 
-    public void setId_profesor(int id_profesor) {
-        this.id_profesor = id_profesor;
+    public void setCodCarrera(int codCarrera) {
+        this.codCarrera = codCarrera;
     }
 
-    public int getCod_carrera() {
-        return cod_carrera;
+    public String getNomCarrera() {
+        return nomCarrera;
     }
 
-    public void setCod_carrera(int cod_carrera) {
-        this.cod_carrera = cod_carrera;
-    }
-
-    public String getNom_carrera() {
-        return nom_carrera;
-    }
-
-    public void setNom_carrera(String nom_carrera) {
-        this.nom_carrera = nom_carrera;
+    public void setNomCarrera(String nomCarrera) {
+        this.nomCarrera = nomCarrera;
     }
 
     @Override
     public String toString() {
-        return "Carrera{" + "id_carrera=" + id_carrera + ", id_profesor=" + id_profesor + ", cod_carrera=" + cod_carrera + ", nom_carrera=" + nom_carrera + '}';
+        return "Carrera{" + "id_carrera=" + id_carrera + ", codCarrera=" + codCarrera + ", nomCarrera=" + nomCarrera + '}';
     }
-    
+
+
 
 }

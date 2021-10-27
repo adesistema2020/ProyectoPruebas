@@ -1,6 +1,7 @@
 package inicio;
 
 import controlador.CtrlUsuarioLogin;
+import controlador.gestionreportes.CtrlGeneradorReportes;
 import controlador.gestionusuario.CtrlNuevoUsuarioDir;
 import crud.GestionNivelUser;
 import crud.GestionUsuarioUser;
@@ -18,22 +19,14 @@ public class GestionMain {
 
     }
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws FileNotFoundException, IOException {
 
         CtrlUsuarioLogin ctrlUsuarioLogin = new CtrlUsuarioLogin();
-//        try {
-//            new GestionMain();
-//        } catch (IOException ex) {
-//            System.out.println("Error :" + ex.getMessage());
-//        } catch (Exception x) {
-//            System.out.println("Error :" + x.getMessage());
-//        }
-        ctrlUsuarioLogin.abrir();
-//     GestionNivelUser gestionNivelUser = new GestionNivelUser();
-//     gestionNivelUser.mostrarTabNiveles();
-//     gestionNivelUser.mostrarCaracter();
-//     gestionNivelUser.mostrarIdNivel();
-//GestionUsuarioUser gestionUsuarioUser = new GestionUsuarioUser();
 
+        ctrlUsuarioLogin.abrir();
+        
+//        CtrlGeneradorReportes repAuxiliares = new CtrlGeneradorReportes();
+//        repAuxiliares.printReporteAuxiliares("src/main/java/vistas/reporte/ReporteFinalLp2020", "ReporteAux", 916);
+//        System.out.println("aquiiiiiRepor");
     }
 }

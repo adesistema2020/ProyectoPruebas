@@ -7,14 +7,13 @@ package modelo.gestionprofesor;
 public class Categoria {
     
     private int id_categoria;
-    private int id_profesor;
+//    private int id_profesor;
     private String nomCategoria;
 
 public Categoria (){}
 
-    public Categoria(int id_categoria, int id_profesor, String nomCategoria) {
+    public Categoria(int id_categoria, String nomCategoria) {
         this.id_categoria = id_categoria;
-        this.id_profesor = id_profesor;
         this.nomCategoria = nomCategoria;
     }
 
@@ -24,14 +23,6 @@ public Categoria (){}
 
     public void setId_categoria(int id_categoria) {
         this.id_categoria = id_categoria;
-    }
-
-    public int getId_profesor() {
-        return id_profesor;
-    }
-
-    public void setId_profesor(int id_profesor) {
-        this.id_profesor = id_profesor;
     }
 
     public String getNomCategoria() {
@@ -44,7 +35,9 @@ public Categoria (){}
 
     @Override
     public String toString() {
-        return "Categoria{" + "id_categoria=" + id_categoria + ", id_profesor=" + id_profesor + ", nomCategoria=" + nomCategoria + '}';
+        return "Categoria{" + "id_categoria=" + id_categoria + ", nomCategoria=" + nomCategoria + '}';
     }
+
+   
 
 }

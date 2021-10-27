@@ -39,6 +39,7 @@ public class UIValidarUsuario extends javax.swing.JFrame {
 
         jLabel3.setText("Contraseña:");
 
+        jTxtNomUsuario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jTxtNomUsuario.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
                 jTxtNomUsuarioCaretUpdate(evt);
@@ -47,6 +48,7 @@ public class UIValidarUsuario extends javax.swing.JFrame {
 
         jBtnIngresar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jBtnIngresar.setText("Ingresar");
+        jBtnIngresar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jBtnIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnIngresarActionPerformed(evt);
@@ -58,6 +60,7 @@ public class UIValidarUsuario extends javax.swing.JFrame {
             }
         });
 
+        jPass.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPass.addCaretListener(new javax.swing.event.CaretListener() {
             public void caretUpdate(javax.swing.event.CaretEvent evt) {
                 jPassCaretUpdate(evt);
@@ -108,7 +111,7 @@ public class UIValidarUsuario extends javax.swing.JFrame {
                         .addComponent(jPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jBtnIngresar)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         pack();

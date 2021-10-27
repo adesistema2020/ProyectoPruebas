@@ -6,15 +6,17 @@ package modelo.gestionprofesor;
  */
 public class Materia {
     private int id_materia;
-    private int cod_materia;
-    private String nom_materia;
+    private int codMateria;
+    private String nomMateria;
+    private int id_Carrera;
     
 public Materia(){}
 
-    public Materia(int id_materia, int cod_materia, String nom_materia) {
+    public Materia(int id_materia, int codMateria, String nomMateria, int id_Carrera) {
         this.id_materia = id_materia;
-        this.cod_materia = cod_materia;
-        this.nom_materia = nom_materia;
+        this.codMateria = codMateria;
+        this.nomMateria = nomMateria;
+        this.id_Carrera = id_Carrera;
     }
 
     public int getId_materia() {
@@ -25,26 +27,33 @@ public Materia(){}
         this.id_materia = id_materia;
     }
 
-    public int getCod_materia() {
-        return cod_materia;
+    public int getCodMateria() {
+        return codMateria;
     }
 
-    public void setCod_materia(int cod_materia) {
-        this.cod_materia = cod_materia;
+    public void setCodMateria(int codMateria) {
+        this.codMateria = codMateria;
     }
 
-    public String getNom_materia() {
-        return nom_materia;
+    public String getNomMateria() {
+        return nomMateria;
     }
 
-    public void setNom_materia(String nom_materia) {
-        this.nom_materia = nom_materia;
+    public void setNomMateria(String nomMateria) {
+        this.nomMateria = nomMateria;
+    }
+
+    public int getId_Carrera() {
+        return id_Carrera;
+    }
+
+    public void setId_Carrera(int id_Carrera) {
+        this.id_Carrera = id_Carrera;
     }
 
     @Override
     public String toString() {
-        return "Materia{" + "id_materia=" + id_materia + ", cod_materia=" + cod_materia + ", nom_materia=" + nom_materia + '}';
+        return "Materia{" + "id_materia=" + id_materia + ", codMateria=" + codMateria + ", nomMateria=" + nomMateria + ", id_Carrera=" + id_Carrera + '}';
     }
-
 
 }

@@ -4,6 +4,9 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import vistas.gestionprofesor.UINuevoIngresoProf;
+import vistas.reporte.UIGestionSalidaReportes;
+//import vistas.gestionprofesor.UiNuevoIngreso;
 
 /**
  * @author AdeS
@@ -17,6 +20,7 @@ public class UIGestionUDirector extends javax.swing.JFrame {
         initComponents();
         setTitle("SISTEMA GESTION DE DIRECCION DE DEPARTAMENTO");
         setExtendedState(MAXIMIZED_BOTH);
+
     }
 
     /**
@@ -38,28 +42,33 @@ public class UIGestionUDirector extends javax.swing.JFrame {
         jMenuBuscarUsuarioDir = new javax.swing.JMenuItem();
         jMenuBuscarUsuarioAdtvo = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuNuevoIngresoProf = new javax.swing.JMenuItem();
+        jMenuModificaProf = new javax.swing.JMenuItem();
+        jMenuReporteProf = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jDesktopPane1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jDesktopPane1.setName(""); // NOI18N
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 394, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 278, Short.MAX_VALUE)
+            .addGap(0, 268, Short.MAX_VALUE)
         );
 
+        jMenuBar1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jMenu1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jMenu1.setText("Usuarios");
 
         jMenuNuevoUsuarioDir.setText("Nuevo Usuario Director");
+        jMenuNuevoUsuarioDir.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jMenuNuevoUsuarioDir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuNuevoUsuarioDirActionPerformed(evt);
@@ -68,6 +77,7 @@ public class UIGestionUDirector extends javax.swing.JFrame {
         jMenu1.add(jMenuNuevoUsuarioDir);
 
         jMenuModificaUsuarioDir.setText("Modificar Usuario Director");
+        jMenuModificaUsuarioDir.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jMenuModificaUsuarioDir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuModificaUsuarioDirActionPerformed(evt);
@@ -77,6 +87,7 @@ public class UIGestionUDirector extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+        jMenuBuscar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jMenuBuscar.setText("Bitacora");
 
         jMenu3.setText("Buscar");
@@ -91,16 +102,30 @@ public class UIGestionUDirector extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenuBuscar);
 
+        jMenu2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jMenu2.setText("Gestion Profesores");
 
-        jMenuItem1.setText("Nuevo Ingreso");
-        jMenu2.add(jMenuItem1);
+        jMenuNuevoIngresoProf.setText("Nuevo Ingreso");
+        jMenuNuevoIngresoProf.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jMenuNuevoIngresoProf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuNuevoIngresoProfActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuNuevoIngresoProf);
 
-        jMenuItem2.setText("Modificar");
-        jMenu2.add(jMenuItem2);
+        jMenuModificaProf.setText("Modificar");
+        jMenuModificaProf.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jMenu2.add(jMenuModificaProf);
 
-        jMenuItem3.setText("Informes");
-        jMenu2.add(jMenuItem3);
+        jMenuReporteProf.setText("Reportes");
+        jMenuReporteProf.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jMenuReporteProf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuReporteProfActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuReporteProf);
 
         jMenuBar1.add(jMenu2);
 
@@ -139,7 +164,7 @@ public class UIGestionUDirector extends javax.swing.JFrame {
         UIModificaUsuario ventanaModificaUsuario;
         try {
             ventanaModificaUsuario = new UIModificaUsuario();
-            
+
             ventanaModificaUsuario.setVisible(true);
             jDesktopPane1.add(ventanaModificaUsuario);
 
@@ -150,6 +175,28 @@ public class UIGestionUDirector extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jMenuModificaUsuarioDirActionPerformed
+
+    private void jMenuNuevoIngresoProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuNuevoIngresoProfActionPerformed
+        UINuevoIngresoProf ventanaNuevoIngreso;
+
+        try {
+            ventanaNuevoIngreso = new UINuevoIngresoProf();
+
+            ventanaNuevoIngreso.setVisible(true);
+            jDesktopPane1.add(ventanaNuevoIngreso);
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jMenuNuevoIngresoProfActionPerformed
+
+    private void jMenuReporteProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuReporteProfActionPerformed
+        UIGestionSalidaReportes ventanaGestionRepor;
+        try {
+            ventanaGestionRepor = new UIGestionSalidaReportes();
+            ventanaGestionRepor.setVisible(true);
+            jDesktopPane1.add(ventanaGestionRepor);
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jMenuReporteProfActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,10 +211,10 @@ public class UIGestionUDirector extends javax.swing.JFrame {
     public javax.swing.JMenu jMenuBuscar;
     public javax.swing.JMenuItem jMenuBuscarUsuarioAdtvo;
     public javax.swing.JMenuItem jMenuBuscarUsuarioDir;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuModificaProf;
     public javax.swing.JMenuItem jMenuModificaUsuarioDir;
+    private javax.swing.JMenuItem jMenuNuevoIngresoProf;
     public javax.swing.JMenuItem jMenuNuevoUsuarioDir;
+    private javax.swing.JMenuItem jMenuReporteProf;
     // End of variables declaration//GEN-END:variables
 }
