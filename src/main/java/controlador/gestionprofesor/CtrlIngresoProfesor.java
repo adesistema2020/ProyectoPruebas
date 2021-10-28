@@ -286,8 +286,10 @@ public class CtrlIngresoProfesor implements ActionListener, KeyListener {
                 || e.getSource() == frm.jTxtNomCarrera || e.getSource() == frm.jTxtNomMateria
                 || e.getSource() == frm.jTxtCategoriaProf || e.getSource() == frm.jTxtDedicacion) {
             char c = e.getKeyChar();
-            if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c != (char) KeyEvent.VK_SPACE)) {
+            if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c != (char) KeyEvent.VK_SPACE) && (c != (char) KeyEvent.VK_DELETE)) {
                 e.consume();
+                 JOptionPane.showMessageDialog(frm, "Solo se permiten los caracteres de la " +
+                         " a " + " a la " + " z " + " y de la " + " A " + " a la " + " Z ");
             }
         }
         if (e.getSource() == frm.jTxtCodCarrera || e.getSource() == frm.jTxtCodMateria || e.getSource() == frm.jTxtNumeroDoc
@@ -295,6 +297,7 @@ public class CtrlIngresoProfesor implements ActionListener, KeyListener {
             char c = e.getKeyChar();
             if (c < '0' || c > '9') {
                 e.consume();
+                JOptionPane.showMessageDialog(frm, " Solo se permiten los caracteres " + " 0 " + " al " + " 1 ");
             }
         }
     }

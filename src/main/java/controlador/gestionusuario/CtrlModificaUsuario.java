@@ -197,7 +197,7 @@ public class CtrlModificaUsuario implements ActionListener, KeyListener {
         } catch (Exception e) {
             System.out.println("Se produjo un error de carga!!");
         }
-         
+
     }
 
     public void limpiarTabla() {
@@ -206,6 +206,7 @@ public class CtrlModificaUsuario implements ActionListener, KeyListener {
             i = i - 1;
         }
     }
+   
 
 //    public void limpiar() {
 //        frmModifica.jTxtId.setText(null);
@@ -220,16 +221,19 @@ public class CtrlModificaUsuario implements ActionListener, KeyListener {
 //    }
     @Override
     public void keyTyped(KeyEvent e) {
-        if (e.getSource() == frmModifica.jTxtApellido || e.getSource() == frmModifica.jTxtBuscarUsuario) {
+        if (e.getSource() == frmModifica.jTxtBuscarApellido || e.getSource() == frmModifica.jTxtBuscarUsuario) {
             char c = e.getKeyChar();
-            if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c != (char) KeyEvent.VK_SPACE)) {
+            if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c != (char) KeyEvent.VK_SPACE) && (c != (char) KeyEvent.VK_DELETE)) {
                 e.consume();
+                JOptionPane.showMessageDialog(frmModifica, "Solo se permiten los caracteres de la " 
+                        + " a " + " a la " + " z " + " y de la " + " A " + " a la " + " Z ");
             }
         }
         if (e.getSource() == frmModifica.jTxtBuscarDNI) {
             char c = e.getKeyChar();
             if (c < '0' || c > '9') {
                 e.consume();
+                JOptionPane.showMessageDialog(frmModifica, " Solo se permiten los caracteres " + " 0 " + " al " + " 1 ");
             }
         }
     }

@@ -137,8 +137,7 @@ public class CtrlGeneradorReportes implements ActionListener, KeyListener {
         if (e.getSource() == frmRep.jBtnGeneraReporte) {
 //           printReporteAuxiliares(String jrxmlfile, String salida, Integer codCarrera)
 
-
-          limpiarTablaCarrera();
+            limpiarTablaCarrera();
             try {
                 cargaTablaCarreras(frmRep.jTableDatosCarrera, 1, null);
             } catch (SQLException ex) {
@@ -151,16 +150,20 @@ public class CtrlGeneradorReportes implements ActionListener, KeyListener {
     @Override
     public void keyTyped(KeyEvent e) {
 
-        if (e.getSource() == frmRep.jTxtBusquedaCodCarrera || e.getSource() == frmRep.jTxtBusquedaNomCarrera) {
+        if (e.getSource() == frmRep.jTxtBusquedaNomCarrera) {
             char c = e.getKeyChar();
-            if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c != (char) KeyEvent.VK_SPACE)) {
+            if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c != (char) KeyEvent.VK_SPACE) && (c != (char) KeyEvent.VK_DELETE)) {
                 e.consume();
+                JOptionPane.showMessageDialog(frmRep, "Solo se permiten los caracteres de la " + 
+                        " a " + " a la " + " z " + " y de la " + " A " + " a la " + " Z ");
+                        
             }
         }
-        if (e.getSource() == frmRep.jTxtCodCarrera) {
+        if (e.getSource() == frmRep.jTxtBusquedaCodCarrera) {
             char c = e.getKeyChar();
             if (c < '0' || c > '9') {
                 e.consume();
+                JOptionPane.showMessageDialog(frmRep, " Solo se permiten los caracteres " + " 0 " + " al " + " 1 ");
             }
         }
     }

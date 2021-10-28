@@ -51,6 +51,7 @@ public class UIModificaUsuario extends javax.swing.JInternalFrame {
             jcbxNivelUsuario.addItem(listaNivelUsuario.get(i));
         }
     }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
